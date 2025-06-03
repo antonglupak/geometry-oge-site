@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Задачи по ромбам | Геометрия ОГЭ</title>
+    <link rel="stylesheet" href="styles/styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            color: #333;
+        }
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 30px;
+        }
+        .problem {
+            margin-bottom: 40px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+        .problem img {
+            max-width: 200px;
+            display: block;
+            margin: 15px 0;
+            border: 1px solid #ccc;
+        }
+        .answer-input {
+            margin: 10px 0;
+            padding: 8px;
+            width: 80px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        .check-btn {
+            background-color: #2ecc71;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-left: 10px;
+        }
+        .check-btn:hover {
+            background-color: #27ae60;
+        }
+        .result {
+            margin-left: 15px;
+            font-weight: bold;
+        }
+        .correct {
+            color: #27ae60;
+        }
+        .incorrect {
+            color: #e74c3c;
+        }
+        .help-btn {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 10px;
+            display: block;
+        }
+        .help-btn:hover {
+            background-color: #2980b9;
+        }
+        .hint {
+            display: none;
+            margin-top: 10px;
+            padding: 12px;
+            background-color: #eaf2f8;
+            border-left: 4px solid #3498db;
+            border-radius: 3px;
+            line-height: 1.5;
+        }
+        .hint.visible {
+            display: block;
+        }
+        .back-link {
+            display: inline-block;
+            margin-top: 20px;
+            color: #3498db;
+            text-decoration: none;
+        }
+        .back-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <!-- Навигационное меню -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="index.html" class="logo">Геометрия ОГЭ</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="theory.html">Теория</a></li>
+                <li><a href="tasks.html" class="active">Задания</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h1>Задачи по ромбам</h1>
+        <a href="tasks.html" class="back-link">← Вернуться к разделам</a>
+
+        <!-- Задача 1 -->
+        <div class="problem" id="problem1">
+            <h3>Задача 1</h3>
+            <img src="https://math-oge.sdamgia.ru/get_file?id=40369&png=1" alt="Рисунок к задаче 1">
+            <p>Точка O — центр окружности, на которой лежат точки A, B и C таким образом, что OABC — ромб. Найдите угол OAB. Ответ дайте в градусах.</p>
+            <input type="number" class="answer-input" id="answer1" placeholder="Ответ">
+            <button class="check-btn" onclick="checkAnswer(1, 60)">Проверить</button>
+            <span class="result" id="result1"></span>
+            <button class="help-btn" onclick="showHint(1)">Помощь</button>
+            <div class="hint" id="hint1-1">1. Вспомните, что все стороны ромба равны, а также что OA, OB и OC — радиусы окружности.</div>
+            <div class="hint" id="hint1-2">2. Рассмотрите треугольник BOC. Какие стороны в нем равны?</div>
+            <div class="hint" id="hint1-3">3. Определите тип треугольника BOC (равносторонний). Чему равны его углы?</div>
+            <div class="hint" id="hint1-4">4. Аналогично рассмотрите треугольник ABO и найдите угол OAB.</div>
+        </div>
+
+        <!-- Задача 2 -->
+        <div class="problem" id="problem2">
+            <h3>Задача 2</h3>
+            <img src="https://math-oge.sdamgia.ru/get_file?id=40393&png=1" alt="Рисунок к задаче 2">
+            <p>Точка O — центр окружности, на которой лежат точки P, Q и R таким образом, что OPQR — ромб. Найдите угол ORQ. Ответ дайте в градусах.</p>
+            <input type="number" class="answer-input" id="answer2" placeholder="Ответ">
+            <button class="check-btn" onclick="checkAnswer(2, 60)">Проверить</button>
+            <span class="result" id="result2"></span>
+            <button class="help-btn" onclick="showHint(2)">Помощь</button>
+            <div class="hint" id="hint2-1">1. Аналогично задаче 1, рассмотрите равные стороны ромба и радиусы окружности.</div>
+            <div class="hint" id="hint2-2">2. Рассмотрите треугольник OQR. Какие стороны в нем равны?</div>
+            <div class="hint" id="hint2-3">3. Определите тип треугольника OQR (равносторонний). Чему равны его углы?</div>
+        </div>
+
+        <!-- Задача 3 -->
+        <div class="problem" id="problem3">
+            <h3>Задача 3</h3>
+            <img src="https://math-oge.sdamgia.ru/get_file?id=39918&png=1" alt="Рисунок к задаче 3">
+            <p>Площадь ромба равна 27, а периметр равен 36. Найдите высоту ромба.</p>
+            <input type="number" class="answer-input" id="answer3" placeholder="Ответ">
+            <button class="check-btn" onclick="checkAnswer(3, 3)">Проверить</button>
+            <span class="result" id="result3"></span>
+            <button class="help-btn" onclick="showHint(3)">Помощь</button>
+            <div class="hint" id="hint3-1">1. Найдите длину стороны ромба, зная его периметр (P = 4a).</div>
+            <div class="hint" id="hint3-2">2. Вспомните формулу площади ромба через сторону и высоту (S = a·h).</div>
+            <div class="hint" id="hint3-3">3. Выразите высоту h из формулы площади.</div>
+        </div>
+
+        <!-- Задача 4 -->
+        <div class="problem" id="problem4">
+            <h3>Задача 4</h3>
+            <img src="https://math-oge.sdamgia.ru/get_file?id=39918&png=1" alt="Рисунок к задаче 4">
+            <p>Площадь ромба равна 54, а периметр равен 36. Найдите высоту ромба.</p>
+            <input type="number" class="answer-input" id="answer4" placeholder="Ответ">
+            <button class="check-btn" onclick="checkAnswer(4, 6)">Проверить</button>
+            <span class="result" id="result4"></span>
+            <button class="help-btn" onclick="showHint(4)">Помощь</button>
+            <div class="hint" id="hint4-1">1. Найдите длину стороны ромба, зная его периметр (P = 4a).</div>
+            <div class="hint" id="hint4-2">2. Вспомните формулу площади ромба через сторону и высоту (S = a·h).</div>
+            <div class="hint" id="hint4-3">3. Выразите высоту h из формулы площади.</div>
+        </div>
+
+        <!-- Задача 5 -->
+        <div class="problem" id="problem5">
+            <h3>Задача 5</h3>
+            <img src="https://math-oge.sdamgia.ru/get_file?id=39926&png=1" alt="Рисунок к задаче 5">
+            <p>В ромбе ABCD угол ABC равен 72°. Найдите угол ACD. Ответ дайте в градусах.</p>
+            <input type="number" class="answer-input" id="answer5" placeholder="Ответ">
+            <button class="check-btn" onclick="checkAnswer(5, 54)">Проверить</button>
+            <span class="result" id="result5"></span>
+            <button class="help-btn" onclick="showHint(5)">Помощь</button>
+            <div class="hint" id="hint5-1">1. Вспомните свойство углов ромба, прилежащих к одной стороне (их сумма равна 180°).</div>
+            <div class="hint" id="hint5-2">2. Найдите угол BCD.</div>
+            <div class="hint" id="hint5-3">3. Вспомните, что диагональ ромба делит угол пополам.</div>
+            <div class="hint" id="hint5-4">4. Найдите угол ACD как половину угла BCD.</div>
+        </div>
+
+        <!-- Задача 6 -->
+        <div class="problem" id="problem6">
+            <h3>Задача 6</h3>
+            <img src="https://math-oge.sdamgia.ru/get_file?id=39918&png=1" alt="Рисунок к задаче 6">
+            <p>Один из углов ромба равен 43°. Найдите больший угол этого ромба. Ответ дайте в градусах.</p>
+            <input type="number" class="answer-input" id="answer6" placeholder="Ответ">
+            <button class="check-btn" onclick="checkAnswer(6, 137)">Проверить</button>
+            <span class="result" id="result6"></span>
+            <button class="help-btn" onclick="showHint(6)">Помощь</button>
+            <div class="hint" id="hint6-1">1. Вспомните свойство углов ромба, прилежащих к одной стороне (их сумма равна 180°).</div>
+            <div class="hint" id="hint6-2">2. Найдите больший угол как смежный с данным углом.</div>
+        </div>
+
+        <!-- Задача 7 -->
+        <div class="problem" id="problem7">
+            <h3>Задача 7</h3>
+            <img src="https://math-oge.sdamgia.ru/get_file?id=39917&png=1" alt="Рисунок к задаче 7">
+            <p>Сторона ромба равна 34, а острый угол равен 60°. Высота ромба, опущенная из вершины тупого угла, делит сторону на два отрезка. Каковы длины этих отрезков? Перечислите эти длины в ответе без пробелов в порядке возрастания.</p>
+            <input type="text" class="answer-input" id="answer7" placeholder="Ответ">
+            <button class="check-btn" onclick="checkAnswer(7, '1717')">Проверить</button>
+            <span class="result" id="result7"></span>
+            <button class="help-btn" onclick="showHint(7)">Помощь</button>
+            <div class="hint" id="hint7-1">1. Рассмотрите прямоугольный треугольник, образованный высотой, стороной ромба и частью основания.</div>
+            <div class="hint" id="hint7-2">2. Используйте тригонометрию (косинус угла) для нахождения длины первого отрезка.</div>
+            <div class="hint" id="hint7-3">3. Найдите второй отрезок как разность между стороной ромба и первым отрезком.</div>
+            <div class="hint" id="hint7-4">4. Учитывайте, что высота делит сторону на два равных отрезка в данном случае.</div>
+        </div>
+    </div>
+
+    <script>
+        // Объект для хранения текущего шага подсказки для каждой задачи
+        const hintSteps = {
+            1: 0,
+            2: 0,
+            3: 0,
+            4: 0,
+            5: 0,
+            6: 0,
+            7: 0
+        };
+
+        // Функция для отображения подсказок
+        function showHint(problemNum) {
+            const currentStep = hintSteps[problemNum] + 1;
+            const hintElement = document.getElementById(`hint${problemNum}-${currentStep}`);
+            
+            if (hintElement) {
+                hintElement.classList.add('visible');
+                hintSteps[problemNum] = currentStep;
+            } else {
+                alert('Все подсказки для этой задачи уже показаны!');
+            }
+        }
+
+        // Функция для проверки ответа
+        function checkAnswer(problemNum, correctAnswer) {
+            let userAnswer;
+            const resultElement = document.getElementById(`result${problemNum}`);
+            
+            // Для задачи 7 (ответ из двух чисел без пробела)
+            if (problemNum === 7) {
+                userAnswer = document.getElementById(`answer${problemNum}`).value.trim();
+            } else {
+                userAnswer = parseInt(document.getElementById(`answer${problemNum}`).value);
+            }
+
+            if (problemNum !== 7 && isNaN(userAnswer)) {
+                resultElement.textContent = "Введите число!";
+                resultElement.className = "result incorrect";
+                return;
+            }
+
+            if (userAnswer == correctAnswer) {
+                resultElement.textContent = "Правильно!";
+                resultElement.className = "result correct";
+            } else {
+                resultElement.textContent = "Неверно. Попробуйте еще!";
+                resultElement.className = "result incorrect";
+            }
+        }
+    </script>
+</body>
+</html>

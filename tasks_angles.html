@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Задачи по углам | Геометрия ОГЭ</title>
+    <link rel="stylesheet" href="styles/styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            color: #333;
+        }
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 30px;
+        }
+        .problem {
+            margin-bottom: 40px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+        .problem img {
+            max-width: 200px;
+            display: block;
+            margin: 15px 0;
+            border: 1px solid #ccc;
+        }
+        .answer-input {
+            margin: 10px 0;
+            padding: 8px;
+            width: 80px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        .check-btn {
+            background-color: #2ecc71;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-left: 10px;
+        }
+        .check-btn:hover {
+            background-color: #27ae60;
+        }
+        .result {
+            margin-left: 15px;
+            font-weight: bold;
+        }
+        .correct {
+            color: #27ae60;
+        }
+        .incorrect {
+            color: #e74c3c;
+        }
+        .help-btn {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 10px;
+            display: block;
+        }
+        .help-btn:hover {
+            background-color: #2980b9;
+        }
+        .hint {
+            display: none;
+            margin-top: 10px;
+            padding: 12px;
+            background-color: #eaf2f8;
+            border-left: 4px solid #3498db;
+            border-radius: 3px;
+            line-height: 1.5;
+        }
+        .hint.visible {
+            display: block;
+        }
+        .back-link {
+            display: inline-block;
+            margin-top: 20px;
+            color: #3498db;
+            text-decoration: none;
+        }
+        .back-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <!-- Навигационное меню -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="index.html" class="logo">Геометрия ОГЭ</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="theory.html">Теория</a></li>
+                <li><a href="tasks.html" class="active">Задания</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h1>Задачи по углам</h1>
+        <a href="tasks.html" class="back-link">← Вернуться к разделам</a>
+
+        <!-- Задача 1 -->
+        <div class="problem" id="problem1">
+            <h3>Задача 1</h3>
+            <p>В треугольнике два угла равны 31° и 94°. Найдите его третий угол. Ответ дайте в градусах.</p>
+            <input type="number" class="answer-input" id="answer1" placeholder="Ответ">
+            <button class="check-btn" onclick="checkAnswer(1, 55)">Проверить</button>
+            <span class="result" id="result1"></span>
+            <button class="help-btn" onclick="showHint(1)">Помощь</button>
+            <div class="hint" id="hint1-1">1. Вспомните, чему равна сумма углов треугольника.</div>
+            <div class="hint" id="hint1-2">2. Составьте уравнение: 31° + 94° + x = 180°, где x - искомый угол.</div>
+            <div class="hint" id="hint1-3">3. Решите уравнение для нахождения x.</div>
+        </div>
+
+        <!-- Задача 2 -->
+        <div class="problem" id="problem2">
+            <h3>Задача 2</h3>
+            <img src="https://math-oge.sdamgia.ru/get_file?id=12661&png=1" alt="Рисунок к задаче 2">
+            <p>На прямой AB взята точка M. Луч MD — биссектриса угла CMB. Известно, что ∠DMC = 72°. Найдите угол CMA. Ответ дайте в градусах.</p>
+            <input type="number" class="answer-input" id="answer2" placeholder="Ответ">
+            <button class="check-btn" onclick="checkAnswer(2, 36)">Проверить</button>
+            <span class="result" id="result2"></span>
+            <button class="help-btn" onclick="showHint(2)">Помощь</button>
+            <div class="hint" id="hint2-1">1. Вспомните свойство биссектрисы угла (делит угол на две равные части).</div>
+            <div class="hint" id="hint2-2">2. Найдите угол DMB (он равен углу DMC).</div>
+            <div class="hint" id="hint2-3">3. Углы CMA, DMC и DMB вместе образуют развернутый угол (180°).</div>
+            <div class="hint" id="hint2-4">4. Найдите угол CMA как остаток от 180° после вычитания углов DMC и DMB.</div>
+        </div>
+
+        <!-- Задача 3 -->
+        <div class="problem" id="problem3">
+            <h3>Задача 3</h3>
+            <img src="https://math-oge.sdamgia.ru/get_file?id=12641&png=1" alt="Рисунок к задаче 3">
+            <p>Прямые m и n параллельны. Найдите ∠3, если ∠1 = 38°, ∠2 = 76°. Ответ дайте в градусах.</p>
+            <input type="number" class="answer-input" id="answer3" placeholder="Ответ">
+            <button class="check-btn" onclick="checkAnswer(3, 66)">Проверить</button>
+            <span class="result" id="result3"></span>
+            <button class="help-btn" onclick="showHint(3)">Помощь</button>
+            <div class="hint" id="hint3-1">1. Найдите угол 4, используя свойство соответственных углов при параллельных прямых.</div>
+            <div class="hint" id="hint3-2">2. Углы 2, 3 и 4 образуют треугольник.</div>
+            <div class="hint" id="hint3-3">3. Используйте сумму углов треугольника (180°) для нахождения угла 3.</div>
+        </div>
+
+        <!-- Задача 4 -->
+        <div class="problem" id="problem4">
+            <h3>Задача 4</h3>
+            <img src="https://math-oge.sdamgia.ru/get_file?id=12640&png=1" alt="Рисунок к задаче 4">
+            <p>Углы, отмеченные на рисунке одной дугой, равны. Найдите угол α. Ответ дайте в градусах.</p>
+            <input type="number" class="answer-input" id="answer4" placeholder="Ответ">
+            <button class="check-btn" onclick="checkAnswer(4, 40)">Проверить</button>
+            <span class="result" id="result4"></span>
+            <button class="help-btn" onclick="showHint(4)">Помощь</button>
+            <div class="hint" id="hint4-1">1. Углы, отмеченные одинаковыми дугами, равны между собой.</div>
+            <div class="hint" id="hint4-2">2. Найдите сумму углов, образующих развернутый угол (180°).</div>
+            <div class="hint" id="hint4-3">3. Составьте уравнение: 100° + 2α = 180°.</div>
+            <div class="hint" id="hint4-4">4. Решите уравнение относительно α.</div>
+        </div>
+
+        <!-- Задача 5 -->
+        <div class="problem" id="problem5">
+            <h3>Задача 5</h3>
+            <img src="https://math-oge.sdamgia.ru/get_file?id=39827&png=1" alt="Рисунок к задаче 5">
+            <p>Диагональ прямоугольника образует угол 51° с одной из его сторон. Найдите острый угол между диагоналями этого прямоугольника. Ответ дайте в градусах.</p>
+            <input type="number" class="answer-input" id="answer5" placeholder="Ответ">
+            <button class="check-btn" onclick="checkAnswer(5, 78)">Проверить</button>
+            <span class="result" id="result5"></span>
+            <button class="help-btn" onclick="showHint(5)">Помощь</button>
+            <div class="hint" id="hint5-1">1. Вспомните свойство диагоналей прямоугольника (равны и делятся точкой пересечения пополам).</div>
+            <div class="hint" id="hint5-2">2. Рассмотрите равнобедренный треугольник, образованный половинами диагоналей и стороной.</div>
+            <div class="hint" id="hint5-3">3. Используйте сумму углов треугольника для нахождения искомого угла.</div>
+        </div>
+
+        <!-- Задача 6 -->
+        <div class="problem" id="problem6">
+            <h3>Задача 6</h3>
+            <img src="https://math-oge.sdamgia.ru/get_file?id=39771&png=1" alt="Рисунок к задаче 6">
+            <p>В треугольнике ABC известно, что ∠BAC = 46°, AD — биссектриса. Найдите угол BAD. Ответ дайте в градусах.</p>
+            <input type="number" class="answer-input" id="answer6" placeholder="Ответ">
+            <button class="check-btn" onclick="checkAnswer(6, 23)">Проверить</button>
+            <span class="result" id="result6"></span>
+            <button class="help-btn" onclick="showHint(6)">Помощь</button>
+            <div class="hint" id="hint6-1">1. Вспомните определение биссектрисы угла (делит угол на две равные части).</div>
+            <div class="hint" id="hint6-2">2. Найдите угол BAD как половину угла BAC.</div>
+        </div>
+
+        <!-- Задача 7 -->
+        <div class="problem" id="problem7">
+            <h3>Задача 7</h3>
+            <img src="https://math-oge.sdamgia.ru/get_file?id=39827&png=1" alt="Рисунок к задаче 7">
+            <p>Диагональ прямоугольника образует угол 74° с одной из его сторон. Найдите острый угол между диагоналями этого прямоугольника. Ответ дайте в градусах.</p>
+            <input type="number" class="answer-input" id="answer7" placeholder="Ответ">
+            <button class="check-btn" onclick="checkAnswer(7, 32)">Проверить</button>
+            <span class="result" id="result7"></span>
+            <button class="help-btn" onclick="showHint(7)">Помощь</button>
+            <div class="hint" id="hint7-1">1. Вспомните свойство диагоналей прямоугольника (равны и делятся точкой пересечения пополам).</div>
+            <div class="hint" id="hint7-2">2. Рассмотрите равнобедренный треугольник, образованный половинами диагоналей и стороной.</div>
+            <div class="hint" id="hint7-3">3. Используйте сумму углов треугольника для нахождения искомого угла.</div>
+        </div>
+    </div>
+
+    <script>
+        // Объект для хранения текущего шага подсказки для каждой задачи
+        const hintSteps = {
+            1: 0,
+            2: 0,
+            3: 0,
+            4: 0,
+            5: 0,
+            6: 0,
+            7: 0
+        };
+
+        // Функция для отображения подсказок
+        function showHint(problemNum) {
+            const currentStep = hintSteps[problemNum] + 1;
+            const hintElement = document.getElementById(`hint${problemNum}-${currentStep}`);
+            
+            if (hintElement) {
+                hintElement.classList.add('visible');
+                hintSteps[problemNum] = currentStep;
+            } else {
+                alert('Все подсказки для этой задачи уже показаны!');
+            }
+        }
+
+        // Функция для проверки ответа
+        function checkAnswer(problemNum, correctAnswer) {
+            const userAnswer = parseInt(document.getElementById(`answer${problemNum}`).value);
+            const resultElement = document.getElementById(`result${problemNum}`);
+            
+            if (isNaN(userAnswer)) {
+                resultElement.textContent = "Введите число!";
+                resultElement.className = "result incorrect";
+                return;
+            }
+
+            if (userAnswer === correctAnswer) {
+                resultElement.textContent = "Правильно!";
+                resultElement.className = "result correct";
+            } else {
+                resultElement.textContent = "Неверно. Попробуйте еще!";
+                resultElement.className = "result incorrect";
+            }
+        }
+    </script>
+</body>
+</html>
